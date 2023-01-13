@@ -135,72 +135,86 @@ type TranslatedLogBuilder struct {
 
 func (tlb *TranslatedLogBuilder) Int(key string, value int) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Int(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Int(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Int8(key string, value int8) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Int8(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Int8(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Int16(key string, value int16) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Int16(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Int16(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Int32(key string, value int32) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Int32(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Int32(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Int64(key string, value int64) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Int64(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Int64(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Uint(key string, value uint) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Uint(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Uint(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Uint8(key string, value uint8) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Uint8(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Uint8(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Uint16(key string, value uint16) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Uint16(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Uint16(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Uint32(key string, value uint32) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Uint32(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Uint32(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Uint64(key string, value uint64) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Uint64(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Uint64(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Float32(key string, value float32) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Float32(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Float32(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Float64(key string, value float64) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Float64(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Float64(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Stringer(key string, value fmt.Stringer) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Stringer(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Stringer(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Bytes(key string, value []byte) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Bytes(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Bytes(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Timestamp() logger.LogBuilder {
@@ -209,17 +223,20 @@ func (tlb *TranslatedLogBuilder) Timestamp() logger.LogBuilder {
 
 func (tlb *TranslatedLogBuilder) Bool(key string, value bool) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Bool(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Bool(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Str(key string, value string) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Str(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Str(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Any(key string, value any) logger.LogBuilder {
 	key = tlb.Translator.TranslateTo(key, tlb.Language)
-	return tlb.LogBuilder.Any(key, value)
+	tlb.LogBuilder = tlb.LogBuilder.Any(key, value)
+	return tlb.LogBuilder
 }
 
 func (tlb *TranslatedLogBuilder) Err(err error) logger.LogBuilder {
