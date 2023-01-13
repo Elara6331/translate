@@ -1,7 +1,6 @@
 package translate
 
 import (
-	"fmt"
 	"hash/crc64"
 	"io"
 	"io/fs"
@@ -80,8 +79,6 @@ func NewFromFS(fsys fs.FS) (Translator, error) {
 	if err != nil {
 		return Translator{}, err
 	}
-
-	fmt.Println(cat)
 
 	return Translator{cat, language.English}, nil
 }
