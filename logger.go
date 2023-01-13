@@ -218,7 +218,8 @@ func (tlb *TranslatedLogBuilder) Bytes(key string, value []byte) logger.LogBuild
 }
 
 func (tlb *TranslatedLogBuilder) Timestamp() logger.LogBuilder {
-	return tlb.Timestamp()
+	tlb.LogBuilder = tlb.LogBuilder.Timestamp()
+	return tlb
 }
 
 func (tlb *TranslatedLogBuilder) Bool(key string, value bool) logger.LogBuilder {
@@ -240,7 +241,8 @@ func (tlb *TranslatedLogBuilder) Any(key string, value any) logger.LogBuilder {
 }
 
 func (tlb *TranslatedLogBuilder) Err(err error) logger.LogBuilder {
-	return tlb.Err(err)
+	tlb.LogBuilder = tlb.LogBuilder.Err(err)
+	return tlb
 }
 
 func (tlb *TranslatedLogBuilder) Send() {
