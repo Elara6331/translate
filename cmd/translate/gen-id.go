@@ -1,8 +1,7 @@
 package main
 
 import (
-	"hash/crc64"
-	"io"
+	"hash/crc32"
 	"os"
 
 	"github.com/pelletier/go-toml/v2"
@@ -28,17 +27,8 @@ func genIDCmd(c *cli.Context) error {
 	}
 	fl.Close()
 
-	hash := crc64.New(crc64.MakeTable(crc64.ISO))
-
 	for i, item := range tr.Items {
-		hash.Reset()
-
-		_, err := io.WriteString(hash, item.Value)
-		if err != nil {
-			return err
-		}
-
-		tr.Items[i].ID = hash.Sum64()
+		tr.Items[i].ID = crc32.ChecksumIEEE([]byte(item.Value))
 	}
 
 	fl, err = os.Create(c.Args().First())

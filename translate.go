@@ -1,8 +1,7 @@
 package translate
 
 import (
-	"hash/crc64"
-	"io"
+	"hash/crc32"
 	"io/fs"
 	"os"
 	"path/filepath"
@@ -17,11 +16,11 @@ type Translations struct {
 }
 
 type Translation struct {
-	ID    uint64 `toml:"id"`
+	ID    uint32 `toml:"id"`
 	Value string `toml:"value"`
 }
 
-type Dictionary map[uint64]string
+type Dictionary map[uint32]string
 type Catalog map[language.Tag]Dictionary
 
 type Translator struct {
@@ -107,11 +106,6 @@ func toDict(tr Translations) Dictionary {
 	return out
 }
 
-func hashString(s string) uint64 {
-	hash := crc64.New(crc64.MakeTable(crc64.ISO))
-	_, err := io.WriteString(hash, s)
-	if err != nil {
-		return 0
-	}
-	return hash.Sum64()
+func hashString(s string) uint32 {
+	return crc32.ChecksumIEEE([]byte(s))
 }
