@@ -34,3 +34,27 @@ out := tr.TranslateTo("First test", language.Russian) // out == "Первая п
 ```
 
 The checksum is calculated from `"First test"`.
+
+### `cmd/translate`
+
+The `cmd/translate` package contains a command that helps with creating translation files.
+
+To generate IDs corresponding to the value fields in a file, run the following:
+
+```shell
+translate gen-id <file>
+```
+
+To test your translations, run:
+
+```shell
+translate translate <dir> <lang> <string>
+```
+
+For example,
+
+```shell
+translate translate ./testdata ru "First test"
+```
+
+This should output `Первая проверка`.
