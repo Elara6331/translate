@@ -33,4 +33,4 @@ tr := translate.New(cat)
 out := tr.TranslateTo("First test", language.Russian) // out == "Первая проверка"
 ```
 
-The checksum is calculated from the string in that function call.
+The checksum is calculated from `"First test"`.
