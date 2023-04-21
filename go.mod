@@ -1,11 +1,11 @@
-module go.arsenm.dev/translate
+module go.elara.ws/translate
 
 go 1.19
 
 require (
 	github.com/pelletier/go-toml/v2 v2.0.6
 	github.com/urfave/cli/v2 v2.23.7
-	go.arsenm.dev/logger v0.0.0-20230104225304-d706171ea6df
+	go.elara.ws/logger v0.0.0-20230421022458-e80700db2090
 	golang.org/x/text v0.6.0
 )
 

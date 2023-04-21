@@ -6,8 +6,8 @@ import (
 
 	"github.com/pelletier/go-toml/v2"
 	"github.com/urfave/cli/v2"
-	"go.arsenm.dev/logger/log"
-	"go.arsenm.dev/translate"
+	"go.elara.ws/logger/log"
+	"go.elara.ws/translate"
 )
 
 func genIDCmd(c *cli.Context) error {

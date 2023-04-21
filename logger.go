@@ -3,7 +3,7 @@ package translate
 import (
 	"fmt"
 
-	"go.arsenm.dev/logger"
+	"go.elara.ws/logger"
 	"golang.org/x/text/language"
 )
 
